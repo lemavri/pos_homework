@@ -2,7 +2,9 @@ module.exports = {
   "a": {
     "price": 1200,
     "discount_pack": 4,
-    "discount_price": 1000
+    "discount_price": 1000,
+    "threshold_qty": 10,
+    "threshold_price": 800
   },
   "b": {
     "price": 3000

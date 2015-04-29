@@ -28,6 +28,33 @@ describe('exists_in_db', function () {
 
 describe('calculate_total', function () {
 
+  var db = {
+    "a": {
+      "price": 1200,
+      "discount_pack": 4,
+      "discount_price": 1000,
+      "threshold_qty": 10,
+      "threshold_price": 800
+    },
+    "b": {
+      "price": 3000
+    },
+    "c": {
+      "price": 4500
+    },
+    "d": {
+      "price": 225,
+      "discount_pack": 10,
+      "discount_price": 200
+    },
+    "e": {
+      "price": 3250,
+    },
+    "f": {
+      "price": 4990,
+    }
+  };
+
   it('calculates correct amount', function () {
     var pos = new POS(db);
 
@@ -36,6 +63,9 @@ describe('calculate_total', function () {
     pos.calculate_total('EFEFEF').should.equal(24720);
     pos.calculate_total('ABCDEF').should.equal(17165);
     pos.calculate_total('EAAAA').should.equal(7250);
+
+    // with threshold
+    pos.calculate_total('AAAAAAAA').should.equal(8000); // 10 A
   });
 
 });
