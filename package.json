@@ -1,0 +1,18 @@
+{
+  "name": "pos",
+  "version": "0.0.1",
+  "description": "PoS implementation for solving Pichi's problem",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "main": "./lib",
+  "scripts": {
+    "test": "node_modules/mocha/bin/_mocha test"
+  },
+  "author": "Mauricio Schneider <lemavri.com>",
+  "license": "MIT Expat License",
+  "devDependencies": {
+    "mocha": "^2.2.4",
+    "should": "^6.0.1"
+  }
+}
